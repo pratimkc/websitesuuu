@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pratim Ecom Growth | Email & SMS Marketing</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f6f8fb;
+      --ink: #07090d;
+      --ink-soft: #161b22;
+      --muted: #667085;
+      --line: #e6eaf0;
+      --accent: #0ba57f;
+      --accent-strong: #08765d;
+      --accent-soft: #e7f8f2;
+      --glass: rgba(149, 143, 143, 0.72);
+      --shadow: 0 24px 70px rgba(7, 9, 13, 0.14);
+      --shadow-soft: 0 16px 40px rgba(7, 9, 13, 0.08);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --max: 1160px;
+      --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 48%, #ffffff 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin-bottom: 24px;
+      font-size: clamp(3rem, 7vw, 6.8rem);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      max-width: 760px;
+      margin-bottom: 18px;
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.08rem;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .page {
+      overflow: hidden;
+    }
+
+    .container {
+      width: min(100% - 44px, var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      z-index: 30;
+      top: 0;
+      border-bottom: 1px solid rgba(230, 234, 240, 0.7);
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 13px;
+      color: #ffffff;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent),
+        var(--ink);
+      box-shadow: 0 14px 32px rgba(7, 9, 13, 0.18);
+      font-size: 0.9rem;
+    }
+
+    .brand-name {
+      display: grid;
+      gap: 2px;
+      line-height: 1;
+    }
+
+    .brand-name small {
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .btn {
+      position: relative;
+      isolation: isolate;
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 14px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 850;
+      line-height: 1;
+      white-space: nowrap;
+      transition: transform 340ms var(--ease-soft), box-shadow 340ms var(--ease-soft), border-color 340ms var(--ease-soft), background 340ms var(--ease-soft);
+      will-change: transform;
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      transform: translateX(-115%) skewX(-20deg);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transition: transform 900ms var(--ease-soft);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.015);
+    }
+
+    .btn:hover::after {
+      transform: translateX(115%) skewX(-20deg);
+    }
+
+    .btn-primary {
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      box-shadow: 0 18px 40px rgba(11, 165, 127, 0.24);
+    }
+
+    .btn-secondary {
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.86);
+      border-color: var(--line);
+      box-shadow: 0 12px 26px rgba(7, 9, 13, 0.06);
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .section {
+      position: relative;
+      padding: 104px 0;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(100% - 44px, var(--max));
+      height: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, transparent, rgba(11, 165, 127, 0.18), transparent);
+      opacity: 0.7;
+    }
+
+    .section-soft {
+      background:
+        linear-gradient(180deg, rgba(246, 248, 251, 0.7), rgba(255, 255, 255, 0.92));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 42px;
+    }
+
+    .section-head.center {
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 16px;
+      color: var(--accent-strong);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 7px rgba(11, 165, 127, 0.12);
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 76px);
+      padding: 78px 0 94px;
+      background:
+        linear-gradient(115deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.84) 48%, rgba(231, 248, 242, 0.86) 100%),
+        radial-gradient(circle at 80% 18%, rgba(11, 165, 127, 0.26), transparent 32%),
+        #ffffff;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(7, 9, 13, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(7, 9, 13, 0.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, #000, transparent 78%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.78fr);
+      gap: 62px;
+      align-items: center;
+    }
+
+    .gradient-text {
+      background: linear-gradient(110deg, #050608 0%, #0e6f58 54%, #0ba57f 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: textShift 11s ease-in-out infinite alternate;
+      background-size: 140% 100%;
+    }
+
+    .lead {
+      max-width: 710px;
+      margin-bottom: 30px;
+      color: #4b5563;
+      font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+      line-height: 1.75;
+    }
+
+    .hero-note {
+      max-width: 620px;
+      margin: 18px 0 0;
+      font-size: 0.96rem;
+    }
+
+    .platform-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: -8px 0 26px;
+    }
+
+    .platform-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 36px;
+      padding: 8px 12px;
+      border: 1px solid rgba(230, 234, 240, 0.92);
+      border-radius: 999px;
+      color: var(--ink-soft);
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 10px 28px rgba(7, 9, 13, 0.06);
+      font-size: 0.82rem;
+      font-weight: 800;
+      backdrop-filter: blur(14px);
+    }
+
+    .platform-chip::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(11, 165, 127, 0.12);
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .trust-row span {
+      display: inline-flex;
+      min-height: 34px;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid rgba(11, 165, 127, 0.18);
+      border-radius: 999px;
+      color: var(--accent-strong);
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 0.76rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+    }
+
+    .audit-card {
+      position: relative;
+      transform: translateZ(0);
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.54);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+      animation: floatPanel 11s var(--ease-soft) infinite;
+      will-change: transform;
+    }
+
+    .audit-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      z-index: -1;
+      border-radius: 29px;
+      background: linear-gradient(135deg, rgba(11, 165, 127, 0.28), rgba(255, 255, 255, 0.2), rgba(7, 9, 13, 0.08));
+    }
+
+    .audit-preview {
+      overflow: hidden;
+      border: 1px solid rgba(230, 234, 240, 0.86);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.86);
+    }
+
+    .audit-preview-head {
+      padding: 24px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(231, 248, 242, 0.85), rgba(255, 255, 255, 0.9));
+    }
+
+    .audit-preview-head span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--accent-strong);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .audit-preview-head strong {
+      display: block;
+      max-width: 360px;
+      font-size: 1.5rem;
+      line-height: 1.14;
+      letter-spacing: -0.03em;
+    }
+
+    .audit-preview-body {
+      padding: 10px 24px 24px;
+    }
+
+    .audit-dashboard {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      padding: 18px 24px 0;
+    }
+
+    .dashboard-metric {
+      padding: 12px;
+      border: 1px solid rgba(230, 234, 240, 0.9);
+      border-radius: 14px;
+      background: rgba(246, 248, 251, 0.76);
+    }
+
+    .dashboard-metric strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.92rem;
+    }
+
+    .dashboard-metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .audit-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      transition: transform 420ms var(--ease-soft), background 420ms var(--ease-soft);
+    }
+
+    .audit-item:hover {
+      transform: translateX(3px);
+    }
+
+    .audit-item-icon,
+    .service-number {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 11px;
+      color: #ffffff;
+      background: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    .audit-item strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .audit-item p {
+      margin-bottom: 0;
+      font-size: 0.94rem;
+    }
+
+    .audit-score {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      font-weight: 850;
+      box-shadow: 0 16px 32px rgba(11, 165, 127, 0.18);
+    }
+
+    .grid,
+    .pain-story,
+    .process-grid,
+    .benefit-grid,
+    .proof-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .pain-story {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .process-grid,
+    .benefit-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .proof-grid,
+    .solution-wrap {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .card,
+    .service,
+    .process-step,
+    .sample-work,
+    .approach,
+    details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-soft);
+      transition: transform 430ms var(--ease-soft), box-shadow 430ms var(--ease-soft), border-color 430ms var(--ease-soft), background 430ms var(--ease-soft);
+      will-change: transform;
+    }
+
+    .card:hover,
+    .service:hover,
+    .process-step:hover,
+    .sample-work:hover,
+    .approach:hover,
+    details:hover {
+      transform: translateY(-4px);
+      border-color: rgba(11, 165, 127, 0.28);
+      background: #ffffff;
+      box-shadow: 0 20px 58px rgba(7, 9, 13, 0.12);
+    }
+
+    .card {
+      min-height: 250px;
+      padding: 30px;
+    }
+
+    .icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      margin-bottom: 42px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--accent-strong);
+      background: var(--accent-soft);
+      font-weight: 900;
+    }
+
+    .process-section {
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);
+    }
+
+    .process-step {
+      min-height: 260px;
+      padding: 32px;
+    }
+
+    .process-step span,
+    .flow-step strong {
+      display: inline-flex;
+      margin-bottom: 44px;
+      color: var(--accent-strong);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .process-step p {
+      margin-bottom: 0;
+    }
+
+    .sticky-panel,
+    .benefit-band,
+    .cta-section {
+      color: #ffffff;
+    }
+
+    .sticky-panel {
+      position: sticky;
+      top: 96px;
+      padding: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      background:
+        radial-gradient(circle at 82% 8%, rgba(11, 165, 127, 0.22), transparent 28%),
+        linear-gradient(135deg, #050608 0%, #121722 100%);
+    }
+
+    .sticky-panel p,
+    .benefit-band p {
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .service-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .service {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      padding: 24px;
+    }
+
+    .benefit-band {
+      padding: 42px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      background:
+        radial-gradient(circle at 82% 8%, rgba(11, 165, 127, 0.22), transparent 28%),
+        linear-gradient(135deg, #050608 0%, #121722 100%);
+    }
+
+    .benefit {
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      transition: transform 430ms var(--ease-soft), background 430ms var(--ease-soft);
+      will-change: transform;
+    }
+
+    .benefit:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .benefit p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .sample-work,
+    .approach {
+      padding: 30px;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 22px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+      transition: transform 420ms var(--ease-soft), border-color 420ms var(--ease-soft);
+    }
+
+    .flow-step:hover {
+      transform: translateX(4px);
+      border-color: rgba(11, 165, 127, 0.24);
+    }
+
+    .flow-step:last-child {
+      border-bottom: 0;
+    }
+
+    .flow-step strong {
+      margin-bottom: 0;
+    }
+
+    .flow-step p {
+      margin-bottom: 0;
+    }
+
+    .flow-channel {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-bottom: 8px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--accent-strong);
+      background: var(--accent-soft);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .approach {
+      display: grid;
+      gap: 14px;
+    }
+
+    .check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--muted);
+    }
+
+    .check::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 22px;
+      height: 22px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at center, #ffffff 0 25%, transparent 28%),
+        var(--accent);
+      box-shadow: 0 0 0 6px rgba(11, 165, 127, 0.1);
+    }
+
+    .microcopy {
+      margin: -4px 0 0;
+      font-size: 0.93rem;
+    }
+
+    /* ===== CTA SECTION WITH FOCUS IMAGE ===== */
+    .cta-section {
+      position: relative;
+      padding: 120px 0;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(11, 165, 127, 0.18), transparent 45%),
+        linear-gradient(135deg, rgba(5, 6, 8, 0.92) 0%, rgba(18, 23, 34, 0.88) 60%, rgba(5, 6, 8, 0.95) 100%),
+        url('focus.png') center 35% / cover no-repeat;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5,6,8,0.4) 0%, transparent 50%, rgba(5,6,8,0.5) 100%);
+      pointer-events: none;
+    }
+
+    .cta-section .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section .eyebrow {
+      color: #4dd4a8;
+      text-shadow: 0 2px 12px rgba(11, 165, 127, 0.3);
+    }
+
+    .cta-section .eyebrow::before {
+      background: #4dd4a8;
+      box-shadow: 0 0 0 7px rgba(11, 165, 127, 0.2);
+    }
+
+    .cta-section h2 {
+      color: #ffffff;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    .cta-section p {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .cta-section .btn-primary {
+      box-shadow: 0 18px 40px rgba(11, 165, 127, 0.35), 0 0 0 1px rgba(255,255,255,0.1) inset;
+    }
+
+    .cta-section .btn-secondary {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+    }
+
+    .cta-section .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .cta-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 34px;
+      align-items: center;
+    }
+    /* ===== END CTA SECTION ===== */
+
+    .faq-list {
+      display: grid;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 14px;
+    }
+
+    details {
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 22px 24px;
+      font-weight: 850;
+    }
+
+    details p {
+      margin: 0;
+      padding: 0 24px 22px;
+    }
+
+    .footer {
+      padding: 34px 0;
+      color: var(--muted);
+      background: #ffffff;
+      font-size: 0.94rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+    }
+
+    .mobile-cta {
+      display: none;
+    }
+
+    [data-reveal] {
+      transform: translateY(18px);
+      opacity: 0;
+      transition: transform 850ms var(--ease-premium), opacity 700ms ease-in-out;
+      transition-delay: var(--delay, 0ms);
+      will-change: transform, opacity;
+    }
+
+    [data-reveal].is-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .hero [data-reveal] {
+      transform: none;
+      opacity: 1;
+    }
+
+    @keyframes floatPanel {
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+      }
+      50% {
+        transform: translate3d(0, -6px, 0) rotate(0.25deg);
+      }
+    }
+
+    @keyframes textShift {
+      from {
+        background-position: 0% center;
+      }
+      to {
+        background-position: 100% center;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid,
+      .solution-wrap,
+      .proof-grid,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .pain-story,
+      .process-grid,
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sticky-panel {
+        position: static;
+      }
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding-bottom: 82px;
+      }
+
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .nav-actions {
+        display: none;
+      }
+
+      .hero {
+        padding: 54px 0 68px;
+      }
+
+      h1 {
+        font-size: clamp(2.65rem, 14vw, 4rem);
+      }
+
+      h2 {
+        font-size: clamp(2rem, 10vw, 2.8rem);
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .btn-row,
+      .btn {
+        width: 100%;
+      }
+
+      .trust-row span {
+        flex: 1 1 auto;
+        justify-content: center;
+        min-width: calc(50% - 8px);
+      }
+
+      .platform-row {
+        gap: 8px;
+      }
+
+      .platform-chip {
+        flex: 1 1 auto;
+        justify-content: center;
+        min-width: calc(50% - 8px);
+      }
+
+      .audit-dashboard {
+        grid-template-columns: 1fr;
+        padding: 16px 18px 0;
+      }
+
+      .audit-card,
+      .benefit-band,
+      .card,
+      .process-step,
+      .sample-work,
+      .approach,
+      .sticky-panel {
+        border-radius: 18px;
+      }
+
+      .audit-preview {
+        border-radius: 16px;
+      }
+
+      .audit-item,
+      .service {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-step {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .mobile-cta {
+        position: fixed;
+        z-index: 40;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 8px;
+        padding: 10px 12px;
+        border-top: 1px solid rgba(230, 234, 240, 0.18);
+        background: rgba(7, 9, 13, 0.86);
+        backdrop-filter: blur(18px);
+      }
+
+      .mobile-cta .btn {
+        min-height: 48px;
+        padding: 12px 10px;
+        font-size: 0.78rem;
+      }
+
+      /* Disable parallax on mobile */
+      .cta-section {
+        background-attachment: scroll;
+        padding: 80px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      [data-reveal] {
+        transform: none;
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="#" class="brand" aria-label="Pratim Ecom Growth home">
+          <span class="brand-mark">PG</span>
+          <span class="brand-name">
+            <span>Pratim Ecom Growth</span>
+            <small>Email + SMS growth</small>
+          </span>
+        </a>
+        <div class="nav-actions">
+          <a class="nav-link" href="#process">How it works</a>
+          <a class="btn btn-secondary" href="https://wa.me/9779807977197">WhatsApp</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div data-reveal>
+          <p class="eyebrow">Email & SMS marketing for online stores</p>
+          <h1><span class="gradient-text">Turn paid traffic into recovered revenue.</span></h1>
+          <p class="lead">Stop leaking sales and start converting the traffic you already paid for, so every visitor has a higher chance of turning into revenue instead of disappearing.</p>
+          <div class="platform-row" aria-label="Supported ecommerce platforms">
+            <span class="platform-chip">Shopify stores</span>
+            <span class="platform-chip">WooCommerce brands</span>
+            <span class="platform-chip">Email + SMS flows</span>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#contact">Get Free Audit</a>
+            <a class="btn btn-secondary" href="https://wa.me/9779807977197">Message on WhatsApp</a>
+          </div>
+          <div class="trust-row" aria-label="Audit trust points">
+            <span>Free audit</span>
+            <span>No pressure</span>
+            <span>Clear fixes</span>
+          </div>
+          <p class="hero-note">For Shopify and WooCommerce stores spending on traffic but losing carts before checkout. Recover carts, improve repeat purchases, and reduce wasted ad spend with better follow-up.</p>
+        </div>
+
+        <div class="audit-card" data-reveal style="--delay: 90ms" aria-label="Free audit includes preview">
+          <div class="audit-preview">
+            <div class="audit-preview-head">
+              <span>Audit includes</span>
+              <strong>A clear look at where revenue is slipping away</strong>
+            </div>
+            <div class="audit-dashboard" aria-label="Audit dashboard summary">
+              <div class="dashboard-metric">
+                <strong>Cart</strong>
+                <span>Recovery</span>
+              </div>
+              <div class="dashboard-metric">
+                <strong>Email</strong>
+                <span>Automation</span>
+              </div>
+              <div class="dashboard-metric">
+                <strong>SMS</strong>
+                <span>Quick wins</span>
+              </div>
+            </div>
+            <div class="audit-preview-body">
+              <div class="audit-item">
+                <span class="audit-item-icon">1</span>
+                <div>
+                  <strong>Cart recovery gaps</strong>
+                  <p>Are shoppers getting clear reminders after they leave checkout?</p>
+                </div>
+              </div>
+              <div class="audit-item">
+                <span class="audit-item-icon">2</span>
+                <div>
+                  <strong>Welcome flow quality</strong>
+                  <p>Do new subscribers understand why they should buy from you?</p>
+                </div>
+              </div>
+              <div class="audit-item">
+                <span class="audit-item-icon">3</span>
+                <div>
+                  <strong>SMS quick wins</strong>
+                  <p>Where a short message could recover attention without annoying buyers.</p>
+                </div>
+              </div>
+              <div class="audit-item">
+                <span class="audit-item-icon">4</span>
+                <div>
+                  <strong>Priority fixes</strong>
+                  <p>The first changes I would make before adding more campaigns.</p>
+                </div>
+              </div>
+              <div class="audit-score">You leave with 3 clear fixes to improve first.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="problems">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">The revenue leak</p>
+          <h2>Customers are visiting, adding products to cart, and leaving without buying.</h2>
+          <p>That means the money you spent on ads and traffic is not coming back. Without follow-up, reminders, or a system to bring them back, potential customers forget your store, buy from someone else, and your revenue stays stuck even when traffic increases.</p>
+        </div>
+
+        <div class="pain-story">
+          <article class="card" data-reveal style="--delay: 0ms">
+            <div class="icon">1</div>
+            <h3>Paid traffic disappears</h3>
+            <p>Visitors arrive from ads, browse your products, and leave before your store has a second chance to convert them.</p>
+          </article>
+          <article class="card" data-reveal style="--delay: 90ms">
+            <div class="icon">2</div>
+            <h3>No follow-up system</h3>
+            <p>Shoppers who show interest do not receive timely reminders that bring them back to the product they wanted.</p>
+          </article>
+          <article class="card" data-reveal style="--delay: 160ms">
+            <div class="icon">3</div>
+            <h3>Revenue stays stuck</h3>
+            <p>Customers forget your store, buy from someone else, and sales plateau even when traffic increases.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section" id="process">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <p class="eyebrow">How the free audit works</p>
+          <h2>Simple, quick, and built around your actual store.</h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step" data-reveal style="--delay: 0ms">
+            <span>01</span>
+            <h3>Send your store link</h3>
+            <p>Share your Shopify or WooCommerce store and any email/SMS tools you already use.</p>
+          </article>
+          <article class="process-step" data-reveal style="--delay: 90ms">
+            <span>02</span>
+            <h3>I review your setup</h3>
+            <p>I look for cart gaps, weak welcome flows, missed post-purchase follow-up, and SMS opportunities.</p>
+          </article>
+          <article class="process-step" data-reveal style="--delay: 160ms">
+            <span>03</span>
+            <h3>You get 3 clear fixes</h3>
+            <p>You leave with practical next steps you can understand before deciding whether to work together.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container solution-wrap">
+        <aside class="sticky-panel" data-reveal>
+          <p class="eyebrow">The simple fix</p>
+          <h2>Build the follow-up system your store should already have.</h2>
+          <p>Instead of sending one-off emails and hoping they work, you get clear flows that speak to shoppers at the right moment.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#contact">Get Free Audit</a>
+          </div>
+        </aside>
+
+        <div class="service-list">
+          <article class="service" data-reveal style="--delay: 0ms">
+            <span class="service-number">1</span>
+            <div>
+              <h3>Abandoned cart recovery emails</h3>
+              <p>Bring shoppers back with friendly reminders, product benefits, answers to common doubts, and a clear path to checkout.</p>
+            </div>
+          </article>
+          <article class="service" data-reveal style="--delay: 90ms">
+            <span class="service-number">2</span>
+            <div>
+              <h3>Welcome email flows</h3>
+              <p>Introduce your brand, highlight best sellers, build trust, and guide new subscribers toward their first purchase.</p>
+            </div>
+          </article>
+          <article class="service" data-reveal style="--delay: 160ms">
+            <span class="service-number">3</span>
+            <div>
+              <h3>Post-purchase emails</h3>
+              <p>Thank customers, explain how to get the best result from their order, ask for reviews, and suggest the next product.</p>
+            </div>
+          </article>
+          <article class="service" data-reveal style="--delay: 230ms">
+            <span class="service-number">4</span>
+            <div>
+              <h3>SMS campaigns</h3>
+              <p>Use short, timely texts for important launches, cart reminders, restocks, and limited offers without overwhelming customers.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="benefit-band" data-reveal>
+          <div class="section-head">
+            <p class="eyebrow">Business outcomes</p>
+            <h2>Email and SMS should make your store easier to grow.</h2>
+            <p>The goal is not to send more messages. The goal is to create steady follow-up that helps customers buy with confidence.</p>
+          </div>
+
+          <div class="benefit-grid">
+            <article class="benefit">
+              <h3>Recover more sales</h3>
+              <p>Follow up with cart abandoners while they still remember what they wanted.</p>
+            </article>
+            <article class="benefit">
+              <h3>Improve retention</h3>
+              <p>Keep customers engaged after the first order so they are more likely to return.</p>
+            </article>
+            <article class="benefit">
+              <h3>Automate follow-up</h3>
+              <p>Set up flows once and let them keep working in the background.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="proof">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Proof without fake claims</p>
+          <h2>See the thinking before you book.</h2>
+          <p>As a newer freelancer, I do not use made-up testimonials. Instead, I show sample work, explain the flow, and focus on clear improvements your store can use.</p>
+        </div>
+
+        <div class="proof-grid">
+          <article class="sample-work" data-reveal>
+            <h3>Sample abandoned cart flow</h3>
+            <div class="flow-step">
+              <strong>01 / Reminder</strong>
+              <p><span class="flow-channel">Email</span>Sent soon after cart abandonment. Reminds the shopper what they left and makes checkout easy.</p>
+            </div>
+            <div class="flow-step">
+              <strong>02 / Trust</strong>
+              <p><span class="flow-channel">Email</span>Answers common doubts, highlights product benefits, and adds trust signals like shipping or support details.</p>
+            </div>
+            <div class="flow-step">
+              <strong>03 / Return</strong>
+              <p><span class="flow-channel">SMS</span>Creates a final reason to return, such as a useful reminder, low-stock note, or simple offer if appropriate.</p>
+            </div>
+          </article>
+
+          <article class="approach" data-reveal style="--delay: 90ms">
+            <h3>Results-focused approach</h3>
+            <div class="check">Review your current email setup, store pages, offer, and customer journey.</div>
+            <div class="check">Find missed opportunities where customers are leaving without follow-up.</div>
+            <div class="check">Write clear emails and SMS messages based on your products and buyers.</div>
+            <div class="check">Keep the setup simple so you can understand what is running and why.</div>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#contact">Get Free Audit</a>
+            </div>
+            <p class="microcopy">No pressure. No spam. Just clear, actionable insights.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <div class="container cta-box" data-reveal>
+        <div>
+          <p class="eyebrow">Free audit call</p>
+          <h2>Want to know what your store is missing?</h2>
+          <p>Send your store link today. I will review your email and SMS setup, point out simple revenue opportunities, and explain what I would fix first.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="mailto:pratimkc253@gmail.com?subject=Free%20Email%20Audit&body=Hi%2C%20I%20want%20a%20free%20audit%20for%20my%20store%3A%20">Get Free Audit</a>
+          <a class="btn btn-secondary" href="https://wa.me/9779807977197">WhatsApp: 9807977197</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <p class="eyebrow">Questions</p>
+          <h2>Simple answers before we talk.</h2>
+        </div>
+
+        <div class="faq-list">
+          <details open data-reveal>
+            <summary>How much does it cost?</summary>
+            <p>Pricing depends on how many flows or campaigns you need. The audit is free, and after reviewing your store I can suggest a simple starter package.</p>
+          </details>
+          <details data-reveal style="--delay: 90ms">
+            <summary>How quickly can the first emails go live?</summary>
+            <p>A basic abandoned cart or welcome flow can usually be planned and written within a few days after I have your store details, brand voice, and platform access.</p>
+          </details>
+          <details data-reveal style="--delay: 160ms">
+            <summary>Can you guarantee results?</summary>
+            <p>No honest marketer can guarantee exact revenue. The goal is to improve the follow-up system, reduce missed opportunities, and track what changes after launch.</p>
+          </details>
+          <details data-reveal style="--delay: 230ms">
+            <summary>Do you work with Shopify and WooCommerce?</summary>
+            <p>Yes. The page is built for Shopify and WooCommerce store owners, and the audit will look at the tools you already use for email, SMS, checkout, and customer follow-up.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>Pratim Ecom Growth</span>
+        <span>Email & SMS marketing for growing e-commerce brands</span>
+      </div>
+    </footer>
+
+    <div class="mobile-cta" aria-label="Mobile contact actions">
+      <a class="btn btn-primary" href="#contact">Get Free Audit</a>
+      <a class="btn btn-secondary" href="https://wa.me/9779807977197">WhatsApp</a>
+    </div>
+  </main>
+
+  <script>
+    const revealItems = document.querySelectorAll("[data-reveal]");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: "0px 0px -80px 0px"
+    });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    window.addEventListener("scroll", () => {
+      const y = window.scrollY;
+      document.documentElement.style.setProperty("--scroll-y", y);
+    }, { passive: true });
+  </script>
+</body>
+</html>
